@@ -1,14 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 
 	var ola = "Olá"
 	var bem = "tudo bem com você?"
-	var name string
+
+	sc := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Qual o seu nome?")
-	fmt.Scanf("%s", &name)
+	name, _ := sc.ReadString('\n')
 	fmt.Println(ola, name, bem)
 }
